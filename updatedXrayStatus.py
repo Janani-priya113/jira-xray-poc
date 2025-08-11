@@ -137,8 +137,37 @@ import os
 import requests
 import json
 
+# def create_bug_ticket(jira_url, jira_email, jira_api_token, project_key, summary, description):
+#     """Create a bug ticket in Jira."""
+#     url = f"{jira_url}/rest/api/3/issue"
+#     auth = (jira_email, jira_api_token)
+#     headers = {
+#         "Accept": "application/json",
+#         "Content-Type": "application/json"
+#     }
+
+#     payload = {
+#         "fields": {
+#             "project": {"key": project_key},
+#             "summary": summary,
+#             "description": description,
+#             "issuetype": {"name": "Bug"}
+#         }
+#     }
+
+#     response = requests.post(url, auth=auth, headers=headers, json=payload)
+#     if response.status_code == 201:
+#         bug_key = response.json().get("key")
+#         print(f"🐞 Bug created in Jira: {bug_key}")
+#         return bug_key
+#     else:
+#         print(f"❌ Failed to create bug: {response.status_code} - {response.text}")
+#         return None
+
+
+
 def create_bug_ticket(jira_url, jira_email, jira_api_token, project_key, summary, description):
-    """Create a bug ticket in Jira."""
+    """Create a bug ticket in Jira using ADF format for description."""
     url = f"{jira_url}/rest/api/3/issue"
     auth = (jira_email, jira_api_token)
     headers = {
@@ -146,11 +175,28 @@ def create_bug_ticket(jira_url, jira_email, jira_api_token, project_key, summary
         "Content-Type": "application/json"
     }
 
+    # Convert plain text to ADF format
+    adf_description = {
+        "type": "doc",
+        "version": 1,
+        "content": [
+            {
+                "type": "paragraph",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": description
+                    }
+                ]
+            }
+        ]
+    }
+
     payload = {
         "fields": {
             "project": {"key": project_key},
             "summary": summary,
-            "description": description,
+            "description": adf_description,  # ADF format instead of plain text
             "issuetype": {"name": "Bug"}
         }
     }
@@ -163,7 +209,6 @@ def create_bug_ticket(jira_url, jira_email, jira_api_token, project_key, summary
     else:
         print(f"❌ Failed to create bug: {response.status_code} - {response.text}")
         return None
-
 
 def update_xray_test_status(
     client_id,
