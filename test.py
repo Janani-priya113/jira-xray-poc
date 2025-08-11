@@ -11,14 +11,17 @@ details = os.getenv("details")
 errorMessage = os.getenv("errorMessage")
 status = os.getenv("status")
 
+jira_url = os.getenv("jira_url")
+jira_api_token = os.getenv("jira_auth_token")
 
-print("Xray Client ID:", xray_client_id)
-print("Xray Client Secret:", xray_client_secret)
-print("Project Key:", projectKey)
-print("Issue Key:", issueKey)
-print("Version Name:", versionName)
-print("Details:", details)
-print("Error Message:", errorMessage)
-print("Status:", status)
+
+# print("Xray Client ID:", xray_client_id)
+# print("Xray Client Secret:", xray_client_secret)
+# print("Project Key:", projectKey)
+# print("Issue Key:", issueKey)
+# print("Version Name:", versionName)
+# print("Details:", details)
+# print("Error Message:", errorMessage)
+# print("Status:", status)
 
 # Use the secret for API calls, DB connections, etc.
