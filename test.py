@@ -20,7 +20,7 @@ jira_api_token = os.getenv("jira_api_token")
 # FAIL_TEST_KEY = os.getenv("FAIL_TEST_KEY")
 TEST_EXEC_KEY = "MTSD-24"
 PASS_TEST_KEY = "MTSD-23"
-FAIL_TEST_KEY = "MTSD-22"
+FAIL_TEST_KEY = "MTSD-37"
 
 def main():
     print("✅ Reading variables from Jenkins...")
