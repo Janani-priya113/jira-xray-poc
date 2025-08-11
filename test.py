@@ -14,6 +14,7 @@ status = os.getenv("status")
 
 jira_url = os.getenv("jira_url")
 jira_api_token = os.getenv("jira_api_token")
+jira_email = "jananipriya.s@cprime.com"
 
 # TEST_EXEC_KEY = os.getenv("TEST_EXEC_KEY")
 # PASS_TEST_KEY = os.getenv("PASS_TEST_KEY")
@@ -44,7 +45,11 @@ def main():
         fail_test_key=FAIL_TEST_KEY,
         status=status,
         version_name=versionName,
-        details=details
+        details=details,
+        jira_url=jira_url,
+        jira_email=jira_email,
+        jira_api_token=jira_api_token,
+        jira_project_key=projectKey
     )
 
 if __name__ == "__main__":
