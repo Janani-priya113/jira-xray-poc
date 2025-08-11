@@ -279,7 +279,7 @@ def update_xray_test_status(
     print("jira_api_token:", jira_api_token)
     print("jira_project_key:", jira_project_key)
     print("update_success:", update_success)
-    if not update_success and jira_url and jira_email and jira_api_token and jira_project_key:
+    if test_status == "FAILED" and jira_url and jira_email and jira_api_token and jira_project_key:
         print("🚨 Both GraphQL and REST failed. Creating Jira Bug ticket...")
         summary = f"Failed to update Xray test status for {target_test_key}"
         description = f"Attempted to update status to {test_status} but both GraphQL and REST API failed.\nDetails: {details}"
