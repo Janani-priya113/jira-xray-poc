@@ -15,9 +15,12 @@ status = os.getenv("status")
 jira_url = os.getenv("jira_url")
 jira_api_token = os.getenv("jira_api_token")
 
-TEST_EXEC_KEY = os.getenv("TEST_EXEC_KEY")
-PASS_TEST_KEY = os.getenv("PASS_TEST_KEY")
-FAIL_TEST_KEY = os.getenv("FAIL_TEST_KEY")
+# TEST_EXEC_KEY = os.getenv("TEST_EXEC_KEY")
+# PASS_TEST_KEY = os.getenv("PASS_TEST_KEY")
+# FAIL_TEST_KEY = os.getenv("FAIL_TEST_KEY")
+TEST_EXEC_KEY = "MTSD-24"
+PASS_TEST_KEY = "MTSD-23"
+FAIL_TEST_KEY = "MTSD-22"
 
 def main():
     print("✅ Reading variables from Jenkins...")
