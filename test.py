@@ -23,5 +23,7 @@ jira_api_token = os.getenv("jira_auth_token")
 # print("Details:", details)
 # print("Error Message:", errorMessage)
 # print("Status:", status)
+print("Jira URL:", jira_url)
+print("Jira API Token:", jira_api_token)
 
 # Use the secret for API calls, DB connections, etc.
