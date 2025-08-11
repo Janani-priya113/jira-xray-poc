@@ -12,7 +12,7 @@ errorMessage = os.getenv("errorMessage")
 status = os.getenv("status")
 
 jira_url = os.getenv("jira_url")
-jira_api_token = os.getenv("jira_auth_token")
+jira_api_token = os.getenv("jira_api_token")
 
 
 # print("Xray Client ID:", xray_client_id)
