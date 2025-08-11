@@ -2,7 +2,7 @@ import os
 
 # Get secret from environment
 secret_value = os.getenv("MY_SECRET")+"sasasasasasasasas"
-versionName = os.getenv("VERSION_NAME")
+versionName = os.getenv("versionName")
 status = os.getenv("status")
 
 print("Secret from Jenkins:", secret_value,versionName,status)
