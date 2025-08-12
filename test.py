@@ -21,7 +21,7 @@ jira_email = "jananipriya.s@cprime.com"
 # FAIL_TEST_KEY = os.getenv("FAIL_TEST_KEY")
 TEST_EXEC_KEY = "MTSD-24"
 PASS_TEST_KEY = "MTSD-23"
-FAIL_TEST_KEY = "MTSD-37"
+FAIL_TEST_KEY = "MTSD-23"
 
 def main():
     print("✅ Reading variables from Jenkins...")
