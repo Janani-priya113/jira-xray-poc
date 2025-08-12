@@ -56,7 +56,7 @@ def create_bug_ticket(jira_url, jira_email, jira_api_token, project_key, summary
     """Create a bug in Jira, then link it to Test Execution & Test Case."""
 
     TEST_EXEC_KEY = "MTSD-24"  # Test Execution
-    TEST_CASE_KEY = "MTSD-37"  # Test Case
+    TEST_CASE_KEY = "MTSD-23"  # Test Case
 
     # Step 1: Create bug ticket in Jira (ADF description)
     create_url = f"{jira_url}/rest/api/3/issue"
